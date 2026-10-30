@@ -1,0 +1,14 @@
+{
+  "info": {
+    "name": "Employee Demo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "baseUrl", "value": "http://localhost:8080" }, { "key": "employeeId", "value": "1" }],
+  "item": [
+    { "name": "Create employee", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"name\": \"Asha Kumar\",\n  \"email\": \"asha@example.com\",\n  \"department\": \"Engineering\",\n  \"salary\": 85000\n}", "options": { "raw": { "language": "json" } } }, "url": "{{baseUrl}}/api/employees" } },
+    { "name": "List employees", "request": { "method": "GET", "url": "{{baseUrl}}/api/employees" } },
+    { "name": "Get employee by ID", "request": { "method": "GET", "url": "{{baseUrl}}/api/employees/{{employeeId}}" } },
+    { "name": "Update employee", "request": { "method": "PUT", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"name\": \"Asha Kumar\",\n  \"email\": \"asha@example.com\",\n  \"department\": \"Platform Engineering\",\n  \"salary\": 90000\n}", "options": { "raw": { "language": "json" } } }, "url": "{{baseUrl}}/api/employees/{{employeeId}}" } },
+    { "name": "Delete employee", "request": { "method": "DELETE", "url": "{{baseUrl}}/api/employees/{{employeeId}}" } }
+  ]
+}
